@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //mongo db
 const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.8acpe.mongodb.net/${process.env.Db_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.8acpe.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 
 
@@ -29,9 +29,9 @@ app.get("/",(req,res)=>{
 
 const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
 client.connect(err => {
-  const activityCollection = client.db(process.env.Db_NAME).collection("volunteering-activity");
-  const eventCollection = client.db(process.env.Db_NAME).collection("event");
-  const userCollection = client.db(process.env.Db_NAME).collection("user");
+  const activityCollection = client.db(process.env.DB_NAME).collection("volunteering-activity");
+  const eventCollection = client.db(process.env.DB_NAME).collection("event");
+  const userCollection = client.db(process.env.DB_NAME).collection("user");
   
     app.post("/AddActivity",(req,res)=>{
         
