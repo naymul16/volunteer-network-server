@@ -103,4 +103,4 @@ client.connect(err => {
 
 
 
-app.listen(port,()=> console.log('server is running'))
+app.listen(process.env.PORT || port)
